@@ -1,0 +1,6 @@
+{
+  "name": "Daily Todo Manager",
+  "description": "Secure, offline Daily Todo Manager with encrypted SQLite relational storage, printable PDF reports, interactive Kanban/Calendar boards, and local authentication lockouts.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

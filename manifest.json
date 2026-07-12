@@ -1,0 +1,23 @@
+{
+  "short_name": "Daily Todo",
+  "name": "Daily Relational Todo & Security Center",
+  "description": "Secure local relational task list with audio comments and security logging.",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/color/512/purple-bubble.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://img.icons8.com/color/192/purple-bubble.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#240046",
+  "theme_color": "#7209b7",
+  "display": "standalone",
+  "orientation": "any"
+}
