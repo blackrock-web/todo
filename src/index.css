@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --app-bg: #0b0914; /* Default dark background */
+  --app-text: #f8fafc;
+  --sidebar-bg: #120e25;
+  --sidebar-text: #f8fafc;
+  --sidebar-item-hover: #1e1b4b;
+  --sidebar-item-active: #6366f1;
+  --card-bg: #120e25;
+  --card-border: #1e1b4b;
+  --header-mobile-bg: #120e25;
+}
+
+.theme-dark {
+  --app-bg: #0b0914;
+  --app-text: #f8fafc;
+  --sidebar-bg: #120e25;
+  --sidebar-text: #f8fafc;
+  --sidebar-item-hover: #1e1b4b;
+  --sidebar-item-active: #6366f1;
+  --card-bg: #120e25;
+  --card-border: #1e1b4b;
+  --header-mobile-bg: #120e25;
+}
+
+.theme-light {
+  --app-bg: #f8fafc; /* slate-50 */
+  --app-text: #0f172a; /* slate-900 */
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #0f172a;
+  --sidebar-item-hover: #f1f5f9;
+  --sidebar-item-active: #4f46e5;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --header-mobile-bg: #ffffff;
+}
+
+.theme-light-contrast {
+  --app-bg: #fdf4ff;       /* soft lavender-white */
+  --app-text: #3f0770;     /* deep grape text, high readability */
+  --sidebar-bg: #fce7f3;   /* pink-100 */
+  --sidebar-text: #3f0770;
+  --sidebar-item-hover: #fbcfe8; /* pink-200 */
+  --sidebar-item-active: #b5179e; /* violet-rose */
+  --card-bg: #fffaff;
+  --card-border: #f0abfc; /* light purple-pink border */
+  --header-mobile-bg: #fce7f3;
+}
+
+/* ---------------------------------------------------------------------------
+   Light theme (Purple-Pink) — full repaint layer.
+   Most inner components use literal Tailwind classes (bg-white, text-slate-*)
+   rather than the --app-bg/--app-text tokens above, so this scoped override
+   layer retints those literal classes whenever .theme-light-contrast is active,
+   giving a fully purple/pink light theme without having to touch every file.
+--------------------------------------------------------------------------- */
+.theme-light-contrast .bg-white { background-color: #fffaff !important; }
+.theme-light-contrast .bg-slate-50,
+.theme-light-contrast .bg-slate-50\/50 { background-color: #fdf4ff !important; }
+.theme-light-contrast .bg-slate-100 { background-color: #fce7f3 !important; }
+.theme-light-contrast .bg-slate-900,
+.theme-light-contrast .bg-slate-950 { background-color: #3f0770 !important; }
+.theme-light-contrast .bg-slate-800 { background-color: #560bad !important; }
+
+.theme-light-contrast .border-slate-100 { border-color: #f5d0fe !important; }
+.theme-light-contrast .border-slate-200 { border-color: #f0abfc !important; }
+.theme-light-contrast .border-slate-800,
+.theme-light-contrast .border-slate-900 { border-color: #7209b7 !important; }
+
+.theme-light-contrast .text-slate-950,
+.theme-light-contrast .text-slate-900 { color: #3f0770 !important; }
+.theme-light-contrast .text-slate-800,
+.theme-light-contrast .text-slate-700 { color: #581c87 !important; }
+.theme-light-contrast .text-slate-600,
+.theme-light-contrast .text-slate-500 { color: #86198f !important; }
+.theme-light-contrast .text-slate-400 { color: #c026d3 !important; }
+.theme-light-contrast .text-slate-300 { color: #f0abfc !important; }
+.theme-light-contrast .text-white { color: #fdf4ff !important; }
+
+.theme-light-contrast .hover\:bg-slate-50:hover,
+.theme-light-contrast .hover\:bg-slate-100:hover { background-color: #fce7f3 !important; }
+.theme-light-contrast .hover\:bg-slate-800:hover,
+.theme-light-contrast .hover\:bg-slate-900:hover { background-color: #7209b7 !important; }
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  /* CSS variables mapping */
+  --color-app-bg: var(--app-bg);
+  --color-app-text: var(--app-text);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-sidebar-text: var(--sidebar-text);
+  --color-sidebar-item-hover: var(--sidebar-item-hover);
+  --color-sidebar-item-active: var(--sidebar-item-active);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-header-mobile-bg: var(--header-mobile-bg);
+
+  /* Redefine 'indigo' colors to be stunning purple-red shades in light theme */
+  --color-indigo-50: #fdf2f8;   /* pink/lavender tint */
+  --color-indigo-100: #fce7f3;  /* rose-pink-100 */
+  --color-indigo-200: #fbcfe8;  /* rose-pink-200 */
+  --color-indigo-300: #f472b6;  /* hot pink */
+  --color-indigo-400: #e879f9;  /* fuchsia light */
+  --color-indigo-500: #d946ef;  /* fuchsia primary */
+  --color-indigo-600: #b5179e;  /* gorgeous violet-rose/purple-red */
+  --color-indigo-700: #7209b7;  /* rich dark purple-red */
+  --color-indigo-800: #560bad;  /* deep purple */
+  --color-indigo-900: #3f0770;  /* deepest grape */
+  --color-indigo-950: #240046;  /* dark plum black */
+}
+
+/* Smooth CSS fade transitions when switching between Dark Plum and Contrast Light themes */
+#app-root, 
+#app-root *, 
+#app-root button, 
+#app-root input, 
+#app-root select, 
+#app-root textarea {
+  transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out, color 0.4s ease-in-out, fill 0.4s ease-in-out, stroke 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
